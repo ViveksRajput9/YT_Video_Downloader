@@ -76,8 +76,7 @@ class QualityCheckingManager(QObject):  # Inherit from QObject
         self.temp_widget = []
         # Thread pool for quality checking   
         max_threads = Config_Manager().get_total_thread()
-        self.quality_thread_pool = QSemaphore(max_threads)  # 🔐 Controls concurrent threads
-
+        self.quality_thread_pool = QThreadPool.globalInstance()  # 🔐 Controls concurrent threads
 
     def is_url_exits(self, url):
         print(self.search_list)

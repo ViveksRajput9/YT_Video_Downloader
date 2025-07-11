@@ -165,7 +165,6 @@ class Config_Manager:
         return self.__load_config().get('isDefault_Download_Enable')
     
 
-
     #  setters
     def set_default_video_quality(self,value):
         try:

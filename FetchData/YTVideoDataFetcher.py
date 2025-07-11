@@ -28,7 +28,7 @@ class FetchData(QRunnable):
         try:
             data = self.database.get_data_by_id(self.video_id)
             if data: 
-                 self.one_signal(data)  # Delay 100ms
+                return self.one_signal(data) 
    
             else:
                 if not Services.Service.is_internet_available():
@@ -94,3 +94,4 @@ class FetchData(QRunnable):
         self.signals.finished.emit({'error': None})
     def one_signal(self,result):
         self.signals.update_Ui.emit(result)
+        self.signals.finished.emit({'error': None})

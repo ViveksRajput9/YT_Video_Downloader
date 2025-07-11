@@ -228,7 +228,7 @@ class SquareWidget(QFrame):
             self.channel_name_loading_movie.start()
             self.title_label_loading_movie.start()
   
-  
+
   
     def mousePressEvent(self, event):
         self.start_pos = event.pos()
@@ -582,5 +582,3 @@ class SquareWidget(QFrame):
                 border: None;
             }}
         """)
-
-
